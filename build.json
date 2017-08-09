@@ -1,0 +1,19 @@
+{
+    "android": {
+        "release": {
+            "keystore": "~/Downloads/MMX.jks",
+            "storePassword": "American2016",
+            "alias": "MMX",
+            "password": "American2016",
+            "keystoreType": ""
+        }
+    },
+     "ios": {
+        "debug": {
+            "developmentTeam": "EHC25F6P5P"
+        },
+        "release": {
+            "developmentTeam": "EHC25F6P5P"
+        }
+    }
+}

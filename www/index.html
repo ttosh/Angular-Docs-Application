@@ -1,0 +1,72 @@
+﻿!DOCTYPE html>
+<html>
+<head>
+    <title>MX Docs</title>
+    <meta charset="utf-8" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <meta http-equiv="Content-Security-Policy">
+    <link href="Content/Scripts/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Style/MxDocs.css" rel="stylesheet" />
+    <script src="Content/Scripts/Lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="Content/Scripts/Lib/angular/angular.min.js"></script>
+    <script src="Content/Scripts/Lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Content/Scripts/Lib/ng-cordova/ng-cordova.min.js"></script>
+    <script src="Content/Scripts/Lib/ngStorage/ngStorage.min.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body ng-app="MxDocsApp" data-ng-cloak>
+    <div ng-controller="MxDocsController as MxDocsCtrl">
+        <div class="main-div" ng-show="MxDocsCtrl.isCheckedOut === true">
+            <div class="child-tab">
+                <ul class="nav nav-tabs nav-justified">
+                    <li ng-repeat="lst in MxDocsCtrl.list | unique: 'type'" class="type-css" ng-class="{'selected-type-css':lst.type===MxDocsCtrl.TypeFilter.type}">
+                        <h2><span ng-bind="lst.type" ng-click="MxDocsCtrl.ChangeType(lst.type)"></span></h2>
+                        <div class="tab-line-separator"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="child-div" id="left">
+                <div ng-repeat="lst in MxDocsCtrl.list | unique: 'fleet' | filter: MxDocsCtrl.TypeFilter" class="fleet-css"
+                             ng-class="{'selected-fleet-css' : lst.fleet===MxDocsCtrl.FileFilter.fleet}">
+                    <div ng-bind="lst.fleet" ng-click="MxDocsCtrl.FileFilter.fleet=lst.fleet" class="font-css"></div>
+                    <div class="line-separator"></div>
+                </div>
+            </div>
+            <div class="child-div" id="right">
+                <a ng-repeat="lst in MxDocsCtrl.list | filter: MxDocsCtrl.FileFilter : true | orderBy: order" target="_blank" href="">
+                    <div class="title-css" ng-click="MxDocsCtrl.Download(lst)">
+                        <div ng-bind="lst.title" ng-click="MxDocsCtrl.ShowURLs(lst.title)" class="font-css"></div>
+                        <img ng-show="lst.isDownloaded" ng-click="MxDocsCtrl.Delete(lst)" src="Content/Style/img/Downloaded.png" class="icon pull-right" />
+                        <img ng-show="!lst.isDownloaded" src="Content/Style/img/Download.png" class="icon pull-right" />
+                        <div class="line-separator"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="authContainer" ng-show="MxDocsCtrl.isCheckedOut === false">
+            The device is either not Checked Out or your session has expired. Please Check In and/or Check Out the device again.<br />
+            <br />
+            <button ng-click="MxDocsCtrl.closeApp()">
+                Close App
+            </button>
+        </div>
+        <div class="authContainer" ng-show="MxDocsCtrl.isCheckedOut === ''">
+        </div>
+    </div>
+    <!-- Config -->
+    <script src="Content/Scripts/App/appConfig.js"></script>
+    <!-- Factories -->
+    <script src="Content/Scripts/App/Factories/mxDocsFactory.js"></script>
+    <!-- Services -->
+    <script src="Content/Scripts/App/Services/mxDocsService.js"></script>
+    <!-- Controllers -->
+    <script src="Content/Scripts/App/Controllers/mxDocsController.js"></script>
+    <!-- Directives -->
+    <!-- Filters -->
+    <script src="Content/Scripts/App/Filters/filters.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "name": "com.aa.mmx.mxdox",
+    "version": "1.0.0",
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
+        "cordova-plugin-aa-mmx": "C:\\Source\\TechOpsR\\MMX\\Dev\\1.0\\Source\\MMX.Plugins.Cordova\\MmxPlugin",
+        "cordova-plugin-device": "1.1.1",
+        "cordova-plugin-document-viewer": "^0.9.5",
+        "cordova-plugin-file": "4.1.1",
+        "cordova-plugin-file-opener2": "git+https://github.com/pwlin/cordova-plugin-file-opener2.git",
+        "cordova-plugin-file-transfer": "^1.6.3",
+        "cordova-plugin-pdialog": "git+https://github.com/orlleite/cordova-plugin-pdialog.git",
+        "cordova-plugin-statusbar": "https://github.com/apache/cordova-plugin-statusbar.git",
+        "cordova-plugin-whitelist": "1",
+        "org.pbernasconi.progressindicator": "C:\\Source\\TechOpsR\\MMX\\Dev\\1.0\\Source\\MxDocs.Cordova\\plugins\\cordova-progressIndicator-master"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-aa-mmx": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-file": {},
+            "cordova-plugin-file-opener2": {},
+            "cordova-plugin-whitelist": {},
+            "org.pbernasconi.progressindicator": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-document-viewer": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-pdialog": {}
+        },
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    }
+}

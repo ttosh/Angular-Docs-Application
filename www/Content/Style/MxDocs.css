@@ -1,0 +1,121 @@
+﻿body, html {
+	margin: 0;
+	overflow: hidden;
+	height: 100%;
+	background-color: #262628;
+}
+.main-div {
+	display: inline-flex;
+	font-size: x-large;
+	/*font-weight: bold;*/
+	color: white;
+	width: 100%;
+}
+.tab-line-separator {
+	height: 1px;
+	border-bottom: 4px solid #4d4c4e;
+}
+.line-separator {
+	height: 1px;
+	border-bottom: 2px solid #4d4c4e;
+}
+.child-div, .child-tab {
+	width: 50%;
+    border-right: solid 5px #4d4c4e;
+}
+.child-tab {
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: white;
+}
+/*::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-button {
+	width: 8px;
+	height:5px;
+}
+::-webkit-scrollbar-track {
+	background:#eee;
+	border: thin solid lightgray;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+	background:#999;
+	border: thin solid gray;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background:#7d7d7d;
+}*/			
+
+#left {
+	height: 91%;
+}
+#right {
+	height: 100%;
+}
+.font-css {
+	padding: 5px 5px 5px 5px;
+}
+.fleet-css {
+	background-color: #262628;
+}
+.type-css {
+	text-align: center;
+}
+.selected-fleet-css {
+	background-color: #2c76bc;
+}
+.selected-type-css {
+	background-color: #2c76bc;
+}
+.title-css {
+	background-color: #2c76bc;
+	color:white;
+}
+.icon {
+	float: right;
+	margin-right: 8px;
+	margin-top: -40px;
+}
+a {
+	text-decoration: none !important;
+}
+.authContainer {
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    font-size: 20pt;
+    font-weight: bold;
+    width: 80%;
+    margin: auto;
+    height: 40%;
+    color: white !important;
+}
+.authContainer button {
+    color: black;
+}
+@media (min-width: 768px) {
+	#left {
+		position: absolute;
+		top: 67px;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		overflow-y: scroll;
+	}
+	#right {
+		position: absolute;
+		top: 0px;
+		bottom: 0;
+		right: 0;
+		width: 50%;
+		overflow-y: scroll;
+	}
+}
